@@ -1,5 +1,7 @@
 package ua.kas.kriptozashita;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -19,8 +21,8 @@ public class Controller implements Initializable {
 	@FXML
 	TextField tf1;
 
-	private boolean addEncryptClick = false;
-	private boolean addDecryptClick = false;
+	public boolean addEncryptClick = false;
+	public boolean addDecryptClick = false;
 
 	private int stringLength;
 
@@ -93,7 +95,7 @@ public class Controller implements Initializable {
 		}
 	}
 
-	public void encrypt() {
+	public void encrypt() throws IOException {
 		if (addEncryptClick = true) {
 			encrypt = l11.getText();
 			encrypt += l4.getText();
@@ -122,6 +124,11 @@ public class Controller implements Initializable {
 			encrypt += l15.getText();
 
 			System.out.println(encrypt);
+
+			FileWriter writer = new FileWriter("file.txt");
+			writer.write(encrypt);
+			writer.flush();
+			writer.close();
 
 			addEncryptClick = false;
 			encrypt = "";
