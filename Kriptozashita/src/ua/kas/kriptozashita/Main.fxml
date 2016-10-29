@@ -164,17 +164,22 @@
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="151.0">
                <children>
                   <TextField fx:id="tf1" layoutX="24.0" layoutY="33.0" promptText="enter text" />
-                  <Button layoutX="80.0" layoutY="74.0" mnemonicParsing="false" onAction="#add" text="Add">
+                  <Button layoutX="10.0" layoutY="73.0" mnemonicParsing="false" onAction="#addDecrypt" text="AddDecrypt">
                      <font>
                         <Font name="Times New Roman Bold Italic" size="14.0" />
                      </font>
                   </Button>
-                  <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="81.0" text="Decrypt">
+                  <Button layoutX="14.0" layoutY="113.0" mnemonicParsing="false" onAction="#decrypt" prefHeight="75.0" prefWidth="81.0" text="Decrypt">
                      <font>
                         <Font name="Times New Roman Bold Italic" size="14.0" />
                      </font>
                   </Button>
                   <Button layoutX="105.0" layoutY="113.0" mnemonicParsing="false" onAction="#encrypt" prefHeight="75.0" prefWidth="81.0" text="Encrypt">
+                     <font>
+                        <Font name="Times New Roman Bold Italic" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="101.0" layoutY="73.0" mnemonicParsing="false" onAction="#addEncrypt" text="AddEncrypt">
                      <font>
                         <Font name="Times New Roman Bold Italic" size="14.0" />
                      </font>

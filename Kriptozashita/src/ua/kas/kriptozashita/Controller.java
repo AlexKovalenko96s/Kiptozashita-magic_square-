@@ -19,18 +19,21 @@ public class Controller implements Initializable {
 	@FXML
 	TextField tf1;
 
+	private boolean addEncryptClick = false;
+	private boolean addDecryptClick = false;
+
 	private int stringLength;
 
 	private String string = "";
 	private String encrypt = "";
+	private String decrypt = "";
 
 	private ArrayList<String> list = new ArrayList<String>();
 	private ArrayList<Label> labelList = new ArrayList<Label>();
 
-	public void add() {
+	public void addEncrypt() {
 		string = tf1.getText();
 		stringLength = string.length();
-		System.out.println(stringLength);
 		if (stringLength <= 25) {
 			for (int i = 0; i < stringLength; i++) {
 				int j = i + 1;
@@ -46,42 +49,97 @@ public class Controller implements Initializable {
 				labelList.get(i).setText("_");
 			}
 
+			addEncryptClick = true;
 			list.clear();
 		} else {
 			JOptionPane.showMessageDialog(null, "Please enter string no more then 25 elements!");
 		}
 	}
 
+	public void addDecrypt() {
+		string = tf1.getText();
+		stringLength = string.length();
+		if (stringLength <= 25) {
+			l11.setText(string.substring(0, 1));
+			l4.setText(string.substring(1, 2));
+			l17.setText(string.substring(2, 3));
+			l10.setText(string.substring(3, 4));
+			l23.setText(string.substring(4, 5));
+			l24.setText(string.substring(5, 6));
+			l12.setText(string.substring(6, 7));
+			l5.setText(string.substring(7, 8));
+			l18.setText(string.substring(8, 9));
+			l6.setText(string.substring(9, 10));
+			l7.setText(string.substring(10, 11));
+			l25.setText(string.substring(11, 12));
+			l13.setText(string.substring(12, 13));
+			l1.setText(string.substring(13, 14));
+			l19.setText(string.substring(14, 15));
+			l20.setText(string.substring(15, 16));
+			l8.setText(string.substring(16, 17));
+			l21.setText(string.substring(17, 18));
+			l14.setText(string.substring(18, 19));
+			l2.setText(string.substring(19, 20));
+			l3.setText(string.substring(20, 21));
+			l16.setText(string.substring(21, 22));
+			l9.setText(string.substring(22, 23));
+			l22.setText(string.substring(23, 24));
+			l15.setText(string.substring(24, 25));
+
+			addDecryptClick = true;
+			string = "";
+		} else {
+			JOptionPane.showMessageDialog(null, "Please enter string no more then 25 elements!");
+		}
+	}
+
 	public void encrypt() {
-		encrypt = l11.getText();
-		encrypt += l4.getText();
-		encrypt += l17.getText();
-		encrypt += l10.getText();
-		encrypt += l23.getText();
-		encrypt += l24.getText();
-		encrypt += l12.getText();
-		encrypt += l5.getText();
-		encrypt += l18.getText();
-		encrypt += l6.getText();
-		encrypt += l7.getText();
-		encrypt += l25.getText();
-		encrypt += l13.getText();
-		encrypt += l1.getText();
-		encrypt += l19.getText();
-		encrypt += l20.getText();
-		encrypt += l8.getText();
-		encrypt += l21.getText();
-		encrypt += l14.getText();
-		encrypt += l2.getText();
-		encrypt += l3.getText();
-		encrypt += l16.getText();
-		encrypt += l9.getText();
-		encrypt += l22.getText();
-		encrypt += l15.getText();
+		if (addEncryptClick = true) {
+			encrypt = l11.getText();
+			encrypt += l4.getText();
+			encrypt += l17.getText();
+			encrypt += l10.getText();
+			encrypt += l23.getText();
+			encrypt += l24.getText();
+			encrypt += l12.getText();
+			encrypt += l5.getText();
+			encrypt += l18.getText();
+			encrypt += l6.getText();
+			encrypt += l7.getText();
+			encrypt += l25.getText();
+			encrypt += l13.getText();
+			encrypt += l1.getText();
+			encrypt += l19.getText();
+			encrypt += l20.getText();
+			encrypt += l8.getText();
+			encrypt += l21.getText();
+			encrypt += l14.getText();
+			encrypt += l2.getText();
+			encrypt += l3.getText();
+			encrypt += l16.getText();
+			encrypt += l9.getText();
+			encrypt += l22.getText();
+			encrypt += l15.getText();
 
-		System.out.println(encrypt);
+			System.out.println(encrypt);
 
-		encrypt = "";
+			addEncryptClick = false;
+			encrypt = "";
+		}
+	}
+
+	public void decrypt() {
+		if (addDecryptClick == true) {
+
+			for (int i = 0; i < labelList.size(); i++) {
+				decrypt += labelList.get(i).getText();
+			}
+
+			System.out.println(decrypt);
+
+			addDecryptClick = false;
+			decrypt = "";
+		}
 	}
 
 	@Override
