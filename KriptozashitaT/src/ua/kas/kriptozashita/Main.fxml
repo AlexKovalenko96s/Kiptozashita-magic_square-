@@ -204,7 +204,7 @@
                   <TextField fx:id="tf2" layoutX="95.0" layoutY="46.0" prefHeight="25.0" prefWidth="67.0" promptText="signature" />
                   <Button layoutX="26.0" layoutY="87.0" mnemonicParsing="false" onAction="#decrypt" text="decrypt" />
                   <Button layoutX="106.0" layoutY="87.0" mnemonicParsing="false" onAction="#encrypt" text="encrypt" />
-                  <Label layoutX="70.0" layoutY="167.0" prefHeight="17.0" prefWidth="113.0" text="©OpasnayaDevichka" />
+                  <Label layoutX="85.0" layoutY="167.0" prefHeight="17.0" prefWidth="99.0" text="©TetianaMaistruk" />
                </children>
             </AnchorPane>
         </items>
